@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+
+# OpenModelica build noise (keep the final executable + runtime deps, ignore these)
+*.o
+*.libs
+*_res.mat
+*_init.xml
+*_info.json
