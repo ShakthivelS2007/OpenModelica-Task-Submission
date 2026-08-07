@@ -114,14 +114,3 @@ pip install pytest
 pytest tests/ -v
 ```
 
-## Notes on design choices
-
-- **QProcess over `subprocess`**: `QProcess` integrates with Qt's event
-  loop, so the simulation runs asynchronously and the GUI never freezes
-  while the executable is running.
-- **Read-only path field**: the executable path is only ever set via the
-  file dialog, preventing typos in a path that must be exact.
-- **Bounded spin boxes**: `QSpinBox` ranges are constrained at the widget
-  level (`0` to `4`) in addition to the explicit validation function, so
-  invalid values are hard to enter in the first place; the validator is
-  still what actually enforces the rule and is what's unit-tested.
